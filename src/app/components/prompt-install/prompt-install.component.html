@@ -1,0 +1,26 @@
+<mat-toolbar
+  *ngIf="data.mobileType === 'android'"
+  class="android-prompt btn-usco-vt"
+>
+  <button mat-button (click)="installPwa()">
+    Añadir a la pantalla de inicio
+  </button>
+  <button mat-icon-button (click)="close()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</mat-toolbar>
+
+<div *ngIf="data.mobileType === 'ios'" class="ios-prompt">
+  <button class="close-ios-inv" mat-button color="primary" (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div>
+    Para instalar esta aplicación web en su dispositivo, pulse el botón Menú y,
+    a continuación, el botón "Añadir a la pantalla de inicio".
+  </div>
+  <div class="row">
+    <div class="col"><img src="../../../assets/icons/menu-ios.png" /></div>
+    <div class="col"><i class="fa-solid fa-chevron-right"></i></div>
+    <div class="col"><img src="../../../assets/icons/add-ios.png" /></div>
+  </div>
+</div>
